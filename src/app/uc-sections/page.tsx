@@ -26,6 +26,12 @@ import { Input } from '@/components/ui/input';
 import { ArrowUpDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Column } from '@tanstack/react-table';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 interface UCSection {
   section: string;
@@ -89,6 +95,7 @@ export default function UCSectionsPage() {
   const [globalFilter, setGlobalFilter] = useState('');
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [sections, setSections] = useState<UCSection[]>([]);
+  const [selectedSection, setSelectedSection] = useState<UCSection | null>(null);
 
   const createSortableHeader = (title: string) => {
     const SortableHeader = ({ column }: { column: Column<UCSection> }) => {
@@ -385,16 +392,43 @@ export default function UCSectionsPage() {
     fetchSections();
   }, []);
 
+  const formatValue = (key: string, value: string) => {
+    // Add units based on the property
+    if (key.includes('_mm')) return `${value} mm`;
+    if (key.includes('_cm2')) return `${value} cm²`;
+    if (key.includes('_cm3')) return `${value} cm³`;
+    if (key.includes('_cm4')) return `${value} cm⁴`;
+    if (key.includes('_cm6')) return `${value} cm⁶`;
+    if (key.includes('_kn')) return `${value} kN`;
+    if (key.includes('_knm')) return `${value} kNm`;
+    if (key.includes('_kgm')) return `${value} kg/m`;
+    if (key.includes('_m2m')) return `${value} m²/m`;
+    if (key.includes('_cm3m')) return `${value} cm³/m`;
+    if (key.includes('_1m')) return `${value} 1/m`;
+    return value;
+  };
+
+  const formatKey = (key: string) => {
+    return key
+      .replace(/_/g, ' ')
+      .replace(/\b\w/g, (l) => l.toUpperCase())
+      .replace(/([A-Z])/g, ' $1')
+      .trim();
+  };
+
   return (
     <div className="container mx-auto py-10">
+      <h1 className="text-2xl font-bold mb-6">UC Sections</h1>
+      
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter all columns..."
+          placeholder="Filter sections..."
           value={globalFilter ?? ''}
           onChange={(event) => setGlobalFilter(event.target.value)}
           className="max-w-sm"
         />
       </div>
+
       <div className="rounded-md border overflow-x-auto">
         <Table>
           <TableHeader>
@@ -419,6 +453,8 @@ export default function UCSectionsPage() {
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
+                  className="cursor-pointer hover:bg-muted/50"
+                  onClick={() => setSelectedSection(row.original)}
                 >
                   {row.getVisibleCells().map((cell: Cell<UCSection, unknown>) => (
                     <TableCell key={cell.id}>
@@ -443,6 +479,26 @@ export default function UCSectionsPage() {
           </TableBody>
         </Table>
       </div>
+
+      <Dialog open={!!selectedSection} onOpenChange={() => setSelectedSection(null)}>
+        <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>{selectedSection?.section} - Detailed Information</DialogTitle>
+          </DialogHeader>
+          <div className="grid grid-cols-2 gap-4 mt-4">
+            {selectedSection && Object.entries(selectedSection).map(([key, value]) => (
+              <div key={key} className="flex flex-col space-y-1">
+                <span className="text-sm font-medium text-muted-foreground">
+                  {formatKey(key)}
+                </span>
+                <span className="text-sm">
+                  {formatValue(key, value)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 } 
