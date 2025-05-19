@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "tsx src/app/db/seed.ts"
+    "seed": "tsx src/app/db/seeds/seed.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.0",
