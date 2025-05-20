@@ -473,8 +473,8 @@ export function UBSectionsTable({ sections }: UBSectionsTableProps) {
         </div>
       </div>
 
-      <Dialog open={!!selectedSection} onOpenChange={() => setSelectedSection(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+      <Dialog open={!!selectedSection} onOpenChange={() => setSelectedSection(null)} >
+        <DialogContent className="w-[75vw] h-[75vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{selectedSection?.section} - Detailed Information</DialogTitle>
           </DialogHeader>
