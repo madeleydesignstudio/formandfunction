@@ -1,38 +1,37 @@
 'use client';
 
-import { useState } from 'react';
-import {
-  ColumnDef,
-  flexRender,
-  getCoreRowModel,
-  getSortedRowModel,
-  SortingState,
-  getFilteredRowModel,
-  ColumnFiltersState,
-  useReactTable,
-  HeaderGroup,
-  Row,
-  Cell,
-} from '@tanstack/react-table';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
-import { Input } from '@/components/ui/input';
-import { ArrowUpDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Column } from '@tanstack/react-table';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
 import { BeamRenderer } from '@/components/beam-renderer';
+import { Button } from '@/components/ui/button';
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from '@/components/ui/table';
+import {
+    Column,
+    ColumnDef,
+    ColumnFiltersState,
+    flexRender,
+    getCoreRowModel,
+    getFilteredRowModel,
+    getSortedRowModel,
+    HeaderGroup,
+    Row,
+    SortingState,
+    useReactTable
+} from '@tanstack/react-table';
+import { ArrowUpDown } from 'lucide-react';
+import { useState } from 'react';
 
 interface UCSection {
   section: string;
@@ -415,55 +414,63 @@ export function UCSectionsTable({ sections }: UCSectionsTableProps) {
         />
       </div>
 
-      <div className="rounded-md border overflow-x-auto">
-        <Table>
-          <TableHeader>
-            {table.getHeaderGroups().map((headerGroup: HeaderGroup<UCSection>) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id} className="border-x">
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </TableHead>
-                ))}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row: Row<UCSection>) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && 'selected'}
-                  className="cursor-pointer hover:bg-muted/50"
-                  onClick={() => setSelectedSection(row.original)}
-                >
-                  {row.getVisibleCells().map((cell: Cell<UCSection, unknown>) => (
-                    <TableCell key={cell.id} className="border-x">
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
+      <div className="rounded-md border">
+        <div className="h-[600px] overflow-auto">
+          <Table>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup: HeaderGroup<UCSection>) => (
+                <TableRow key={headerGroup.id} className="sticky top-0 bg-neutral-100 z-30">
+                  {headerGroup.headers.map((header, index) => (
+                    <TableHead 
+                      key={header.id} 
+                      className={`border-x ${index === 0 ? 'sticky left-0 bg-neutral-100' : ''}`}
+                    >
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                    </TableHead>
                   ))}
                 </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-center"
-                >
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map((row: Row<UCSection>) => (
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && 'selected'}
+                    className="cursor-pointer hover:bg-muted/50"
+                    onClick={() => setSelectedSection(row.original)}
+                  >
+                    {row.getVisibleCells().map((cell, index) => (
+                      <TableCell 
+                        key={cell.id} 
+                        className={`border-x ${index === 0 ? 'sticky left-0 bg-neutral-100 z-10' : ''}`}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length}
+                    className="h-24 text-center"
+                  >
+                    No results.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
       </div>
 
       <Dialog open={!!selectedSection} onOpenChange={() => setSelectedSection(null)}>
