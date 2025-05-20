@@ -8,7 +8,7 @@ export default async function UBSectionsPage() {
   const sections = await getUBSections();
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="mx-auto py-10">
       <h1 className="text-2xl font-bold mb-6">UB Sections</h1>
       <Suspense fallback={<TableSkeleton />}>
         <UBSectionsTable sections={sections} />
@@ -20,7 +20,7 @@ export default async function UBSectionsPage() {
 // Skeleton component for loading state
 function TableSkeleton() {
   return (
-    <div className="rounded-md border overflow-x-auto">
+    <div className="rounded-md border overflow-x-auto ">
       <div className="p-4">
         <Skeleton className="h-10 w-[200px] mb-4" />
       </div>

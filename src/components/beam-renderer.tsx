@@ -1,8 +1,8 @@
 'use client';
 
 import { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, PerspectiveCamera, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 
 interface BeamRendererProps {
@@ -19,14 +19,15 @@ interface BeamRendererProps {
 }
 
 function UCBeam({ section }: { section: BeamRendererProps['section'] }) {
-  const meshRef = useRef<THREE.Mesh>(null);
+  const groupRef = useRef<THREE.Group>(null);
 
   // Convert string dimensions to numbers
-  const height = parseFloat(section.height_mm) / 1000; // Convert mm to m
+  const height = parseFloat(section.height_mm) / 1000;
   const width = parseFloat(section.width_mm) / 1000;
   const webThickness = parseFloat(section.web_thickness_mm) / 1000;
   const flangeThickness = parseFloat(section.flange_thickness_mm) / 1000;
   const rootRadius = parseFloat(section.root_radius_mm) / 1000;
+  const depth = height * 2;
 
   // Create a shape for the UC beam
   const shape = new THREE.Shape();
@@ -49,33 +50,34 @@ function UCBeam({ section }: { section: BeamRendererProps['section'] }) {
   // Extrude settings
   const extrudeSettings = {
     steps: 1,
-    depth: height * 2, // Length proportional to height
+    depth: depth,
     bevelEnabled: true,
     bevelThickness: rootRadius,
     bevelSize: rootRadius,
     bevelSegments: 3,
   };
 
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.2;
-    }
-  });
-
   return (
-    <mesh ref={meshRef}>
-      <extrudeGeometry args={[shape, extrudeSettings]} />
-      <meshStandardMaterial 
-        color="#4B5563" 
-        metalness={0.8}
-        roughness={0.2}
-      />
-    </mesh>
+    <group ref={groupRef}>
+      <mesh castShadow receiveShadow>
+        <extrudeGeometry args={[shape, extrudeSettings]} />
+        <meshPhysicalMaterial 
+          color="#4B5563"
+          metalness={0.9}
+          roughness={0.1}
+          clearcoat={1.0}
+          clearcoatRoughness={0.1}
+          envMapIntensity={1.5}
+          reflectivity={1}
+          ior={2.33}
+        />
+      </mesh>
+    </group>
   );
 }
 
 function UBBeam({ section }: { section: BeamRendererProps['section'] }) {
-  const meshRef = useRef<THREE.Mesh>(null);
+  const groupRef = useRef<THREE.Group>(null);
 
   // Convert string dimensions to numbers
   const height = parseFloat(section.height_mm) / 1000;
@@ -83,6 +85,7 @@ function UBBeam({ section }: { section: BeamRendererProps['section'] }) {
   const webThickness = parseFloat(section.web_thickness_mm) / 1000;
   const flangeThickness = parseFloat(section.flange_thickness_mm) / 1000;
   const rootRadius = parseFloat(section.root_radius_mm) / 1000;
+  const depth = height * 2.5;
 
   // Create a shape for the UB beam
   const shape = new THREE.Shape();
@@ -105,34 +108,35 @@ function UBBeam({ section }: { section: BeamRendererProps['section'] }) {
   // Extrude settings
   const extrudeSettings = {
     steps: 1,
-    depth: height * 2.5, // UB beams are typically longer than UC beams
+    depth: depth,
     bevelEnabled: true,
     bevelThickness: rootRadius,
     bevelSize: rootRadius,
     bevelSegments: 3,
   };
 
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.2;
-    }
-  });
-
   return (
-    <mesh ref={meshRef}>
-      <extrudeGeometry args={[shape, extrudeSettings]} />
-      <meshStandardMaterial 
-        color="#4B5563" 
-        metalness={0.8}
-        roughness={0.2}
-      />
-    </mesh>
+    <group ref={groupRef}>
+      <mesh castShadow receiveShadow>
+        <extrudeGeometry args={[shape, extrudeSettings]} />
+        <meshPhysicalMaterial 
+          color="#4B5563"
+          metalness={0.9}
+          roughness={0.1}
+          clearcoat={1.0}
+          clearcoatRoughness={0.1}
+          envMapIntensity={1.5}
+          reflectivity={1}
+          ior={2.33}
+        />
+      </mesh>
+    </group>
   );
 }
 
 export function BeamRenderer({ section, type }: BeamRendererProps) {
   return (
-    <div className="w-full h-[300px] bg-muted rounded-lg">
+    <div className="w-full h-[300px] bg-white rounded-lg">
       <Canvas shadows>
         <PerspectiveCamera makeDefault position={[2, 2, 2]} />
         <OrbitControls 
@@ -140,12 +144,23 @@ export function BeamRenderer({ section, type }: BeamRendererProps) {
           enableZoom={true}
           enableRotate={true}
         />
-        <ambientLight intensity={0.5} />
+        
+        {/* Environment and lighting */}
+        <Environment preset="warehouse" />
+        <ambientLight intensity={0.3} />
         <directionalLight
           position={[5, 5, 5]}
-          intensity={1}
+          intensity={1.2}
           castShadow
+          shadow-mapSize={[1024, 1024]}
         />
+        <directionalLight
+          position={[-5, 5, -5]}
+          intensity={0.8}
+          castShadow
+          shadow-mapSize={[1024, 1024]}
+        />
+
         {type === 'UC' ? (
           <UCBeam section={section} />
         ) : (

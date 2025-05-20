@@ -168,6 +168,201 @@ export function UCSectionsTable({ sections }: UCSectionsTableProps) {
       header: createSortableHeader('Second Moment Y (cm⁴)'),
       enableColumnFilter: true,
     },
+    {
+      accessorKey: 'second_moment_z_cm4',
+      header: createSortableHeader('Second Moment Z (cm⁴)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'polar_moment_cm4',
+      header: createSortableHeader('Polar Moment (cm⁴)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'radius_gyration_y_mm',
+      header: createSortableHeader('Radius Gyration Y (mm)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'radius_gyration_z_mm',
+      header: createSortableHeader('Radius Gyration Z (mm)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'polar_radius_gyration_mm',
+      header: createSortableHeader('Polar Radius Gyration (mm)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'max_elastic_modulus_y_cm3',
+      header: createSortableHeader('Max Elastic Modulus Y (cm³)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'max_elastic_modulus_z_cm3',
+      header: createSortableHeader('Max Elastic Modulus Z (cm³)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'elastic_modulus_y_cm3',
+      header: createSortableHeader('Elastic Modulus Y (cm³)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'elastic_modulus_z_cm3',
+      header: createSortableHeader('Elastic Modulus Z (cm³)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'shear_area_y_cm2',
+      header: createSortableHeader('Shear Area Y (cm²)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'shear_area_z_cm2',
+      header: createSortableHeader('Shear Area Z (cm²)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'torsional_constant_cm4',
+      header: createSortableHeader('Torsional Constant (cm⁴)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'torsional_constant_st_venant_cm4',
+      header: createSortableHeader('Torsional Constant St Venant (cm⁴)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'torsional_modulus_cm3',
+      header: createSortableHeader('Torsional Modulus (cm³)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'max_warping_function_cm2',
+      header: createSortableHeader('Max Warping Function (cm²)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'warping_constant_cm6',
+      header: createSortableHeader('Warping Constant (cm⁶)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'warping_radius_gyration_mm',
+      header: createSortableHeader('Warping Radius Gyration (mm)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'warping_modulus_cm4',
+      header: createSortableHeader('Warping Modulus (cm⁴)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_modulus_y_cm3',
+      header: createSortableHeader('Plastic Modulus Y (cm³)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_modulus_z_cm3',
+      header: createSortableHeader('Plastic Modulus Z (cm³)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_warping_modulus_cm4',
+      header: createSortableHeader('Plastic Warping Modulus (cm⁴)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_modulus_webs_y_cm3',
+      header: createSortableHeader('Plastic Modulus Webs Y (cm³)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_modulus_flanges_z_cm3',
+      header: createSortableHeader('Plastic Modulus Flanges Z (cm³)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_shape_factor_y',
+      header: createSortableHeader('Plastic Shape Factor Y'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_shape_factor_z',
+      header: createSortableHeader('Plastic Shape Factor Z'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_warping_shape_factor',
+      header: createSortableHeader('Plastic Warping Shape Factor'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_area_y_cm2',
+      header: createSortableHeader('Plastic Area Y (cm²)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_area_z_cm2',
+      header: createSortableHeader('Plastic Area Z (cm²)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_axial_force_kn',
+      header: createSortableHeader('Plastic Axial Force (kN)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_shear_force_y_kn',
+      header: createSortableHeader('Plastic Shear Force Y (kN)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_shear_force_z_kn',
+      header: createSortableHeader('Plastic Shear Force Z (kN)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_moment_y_knm',
+      header: createSortableHeader('Plastic Moment Y (kNm)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'plastic_moment_z_knm',
+      header: createSortableHeader('Plastic Moment Z (kNm)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'ultimate_axial_force_kn',
+      header: createSortableHeader('Ultimate Axial Force (kN)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'mass_per_unit_length_kgm',
+      header: createSortableHeader('Mass Per Unit Length (kg/m)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'surface_area_per_unit_length_m2m',
+      header: createSortableHeader('Surface Area Per Unit Length (m²/m)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'volume_per_unit_length_cm3m',
+      header: createSortableHeader('Volume Per Unit Length (cm³/m)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'surface_area_to_volume_ratio_1m',
+      header: createSortableHeader('Surface Area To Volume Ratio (1/m)'),
+      enableColumnFilter: true,
+    },
+    {
+      accessorKey: 'web_area_cm2',
+      header: createSortableHeader('Web Area (cm²)'),
+      enableColumnFilter: true,
+    },
   ];
 
   const table = useReactTable({
@@ -226,7 +421,7 @@ export function UCSectionsTable({ sections }: UCSectionsTableProps) {
             {table.getHeaderGroups().map((headerGroup: HeaderGroup<UCSection>) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id}>
+                  <TableHead key={header.id} className="border-x">
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -248,7 +443,7 @@ export function UCSectionsTable({ sections }: UCSectionsTableProps) {
                   onClick={() => setSelectedSection(row.original)}
                 >
                   {row.getVisibleCells().map((cell: Cell<UCSection, unknown>) => (
-                    <TableCell key={cell.id}>
+                    <TableCell key={cell.id} className="border-x">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
