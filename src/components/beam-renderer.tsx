@@ -72,6 +72,11 @@ function UCBeam({ section }: { section: BeamRendererProps['section'] }) {
           ior={2.33}
         />
       </mesh>
+      {/* Shear center marker */}
+      <mesh position={[0, 0, 0]}>
+        <sphereGeometry args={[0.02, 16, 16]} />
+        <meshBasicMaterial color="red" />
+      </mesh>
     </group>
   );
 }
@@ -129,6 +134,11 @@ function UBBeam({ section }: { section: BeamRendererProps['section'] }) {
           reflectivity={1}
           ior={2.33}
         />
+      </mesh>
+      {/* Shear center marker */}
+      <mesh position={[0, 0, 0]}>
+        <sphereGeometry args={[0.02, 16, 16]} />
+        <meshBasicMaterial color="red" />
       </mesh>
     </group>
   );
