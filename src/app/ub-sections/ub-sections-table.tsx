@@ -99,6 +99,7 @@ export function UBSectionsTable({ sections }: UBSectionsTableProps) {
   const [globalFilter, setGlobalFilter] = useState('');
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [selectedSection, setSelectedSection] = useState<UBSection | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const createSortableHeader = (title: string) => {
     const SortableHeader = ({ column }: { column: Column<UBSection> }) => {
@@ -244,7 +245,10 @@ export function UBSectionsTable({ sections }: UBSectionsTableProps) {
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
                   className="cursor-pointer hover:bg-muted/50"
-                  onClick={() => setSelectedSection(row.original)}
+                  onClick={() => {
+                    setSelectedSection(row.original);
+                    setIsDialogOpen(true);
+                  }}
                 >
                   {row.getVisibleCells().map((cell: Cell<UBSection, unknown>) => (
                     <TableCell key={cell.id}>
@@ -270,7 +274,10 @@ export function UBSectionsTable({ sections }: UBSectionsTableProps) {
         </Table>
       </div>
 
-      <Dialog open={!!selectedSection} onOpenChange={() => setSelectedSection(null)}>
+      <Dialog 
+        open={isDialogOpen} 
+        onOpenChange={setIsDialogOpen}
+      >
         <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{selectedSection?.section} - Detailed Information</DialogTitle>
