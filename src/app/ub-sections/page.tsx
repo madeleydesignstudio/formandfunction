@@ -1,32 +1,38 @@
 import { Suspense } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 import { UBSectionsTable } from './ub-sections-table';
 import { getUBSections } from './actions';
-import { Skeleton } from '@/components/ui/skeleton';
 
-function TableSkeleton() {
-  return (
-    <div className="space-y-4">
-      <div className="flex items-center py-4">
-        <Skeleton className="h-10 w-[250px]" />
-      </div>
-      <div className="rounded-md border">
-        <div className="h-[400px] w-full">
-          <Skeleton className="h-full w-full" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
+// This is now a server component
 export default async function UBSectionsPage() {
   const sections = await getUBSections();
 
   return (
     <div className="container mx-auto py-10">
-      <h1 className="text-3xl font-bold mb-8">UB Sections</h1>
+      <h1 className="text-2xl font-bold mb-6">UB Sections</h1>
       <Suspense fallback={<TableSkeleton />}>
         <UBSectionsTable sections={sections} />
       </Suspense>
+    </div>
+  );
+}
+
+// Skeleton component for loading state
+function TableSkeleton() {
+  return (
+    <div className="rounded-md border overflow-x-auto">
+      <div className="p-4">
+        <Skeleton className="h-10 w-[200px] mb-4" />
+      </div>
+      <div className="p-4">
+        {Array.from({ length: 10 }).map((_, index) => (
+          <div key={index} className="flex gap-4 mb-4">
+            {Array.from({ length: 10 }).map((_, cellIndex) => (
+              <Skeleton key={cellIndex} className="h-4 w-[100px]" />
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 } 

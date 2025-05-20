@@ -32,6 +32,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
+import { BeamRenderer } from '@/components/beam-renderer';
 
 interface UBSection {
   section: string;
@@ -99,7 +100,6 @@ export function UBSectionsTable({ sections }: UBSectionsTableProps) {
   const [globalFilter, setGlobalFilter] = useState('');
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [selectedSection, setSelectedSection] = useState<UBSection | null>(null);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const createSortableHeader = (title: string) => {
     const SortableHeader = ({ column }: { column: Column<UBSection> }) => {
@@ -245,10 +245,7 @@ export function UBSectionsTable({ sections }: UBSectionsTableProps) {
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
                   className="cursor-pointer hover:bg-muted/50"
-                  onClick={() => {
-                    setSelectedSection(row.original);
-                    setIsDialogOpen(true);
-                  }}
+                  onClick={() => setSelectedSection(row.original)}
                 >
                   {row.getVisibleCells().map((cell: Cell<UBSection, unknown>) => (
                     <TableCell key={cell.id}>
@@ -274,25 +271,31 @@ export function UBSectionsTable({ sections }: UBSectionsTableProps) {
         </Table>
       </div>
 
-      <Dialog 
-        open={isDialogOpen} 
-        onOpenChange={setIsDialogOpen}
-      >
-        <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+      <Dialog open={!!selectedSection} onOpenChange={() => setSelectedSection(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{selectedSection?.section} - Detailed Information</DialogTitle>
           </DialogHeader>
-          <div className="grid grid-cols-2 gap-4 mt-4">
-            {selectedSection && Object.entries(selectedSection).map(([key, value]) => (
-              <div key={key} className="flex flex-col space-y-1">
-                <span className="text-sm font-medium text-muted-foreground">
-                  {formatKey(key)}
-                </span>
-                <span className="text-sm">
-                  {formatValue(key, value)}
-                </span>
+          <div className="grid grid-cols-2 gap-6 mt-4">
+            <div className="space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                {selectedSection && Object.entries(selectedSection).map(([key, value]) => (
+                  <div key={key} className="flex flex-col space-y-1">
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {formatKey(key)}
+                    </span>
+                    <span className="text-sm">
+                      {formatValue(key, value)}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="space-y-6">
+              {selectedSection && (
+                <BeamRenderer section={selectedSection} type="UB" />
+              )}
+            </div>
           </div>
         </DialogContent>
       </Dialog>
