@@ -22,14 +22,57 @@
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Eurocode 1",
             "pages": [
               "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+            ]
+          },
+           {
+            "group": "Eurocode 2",
+            "pages": [
+              "essentials/markdown",
+            ]
+          },
+           {
+            "group": "Eurocode 3",
+            "pages": [
+              "essentials/markdown",
+            ]
+          },
+           {
+            "group": "Eurocode 4",
+            "pages": [
+              "essentials/markdown",
+            ]
+          },
+           {
+            "group": "Eurocode 5",
+            "pages": [
+              "essentials/markdown",
+            ]
+          },
+           {
+            "group": "Eurocode 6",
+            "pages": [
+              "essentials/markdown",
+            ]
+          },
+           {
+            "group": "Eurocode 7",
+            "pages": [
+              "essentials/markdown",
+            ]
+          },
+           {
+            "group": "Eurocode 8",
+            "pages": [
+              "essentials/markdown",
+            ]
+          },
+           {
+            "group": "Eurocode 9",
+            "pages": [
+              "essentials/markdown",
             ]
           }
         ]
