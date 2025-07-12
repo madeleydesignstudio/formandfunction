@@ -14,65 +14,132 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Eurocode 0",
+            "group": "Eurocode 0 - Basis of Structural Design",
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "development",
+              "ec0/basis-design-principles",
+              "ec0/limit-states",
+              "ec0/actions-combinations",
+              "ec0/reliability-safety",
+              "ec0/bridge-applications"
             ]
           },
           {
-            "group": "Eurocode 1",
+            "group": "Eurocode 1 - Actions on Structures",
             "pages": [
-              "essentials/markdown",
+              "ec1/overview",
+              "ec1/part1-1-general-actions",
+              "ec1/part1-2-fire-actions",
+              "ec1/part1-3-snow-loads",
+              "ec1/part1-4-wind-actions",
+              "ec1/part1-5-thermal-actions",
+              "ec1/part1-6-execution-loads",
+              "ec1/part1-7-accidental-actions",
+              "ec1/part2-traffic-loads",
+              "ec1/part3-cranes-machinery",
+              "ec1/part4-silos-tanks"
             ]
           },
-           {
-            "group": "Eurocode 2",
+          {
+            "group": "Eurocode 2 - Design of Concrete Structures",
             "pages": [
-              "essentials/markdown",
+              "ec2/overview",
+              "ec2/part1-1-general-rules",
+              "ec2/part1-2-fire-design",
+              "ec2/part1-3-precast-elements",
+              "ec2/part1-4-lightweight-concrete",
+              "ec2/part1-5-unbonded-tendons",
+              "ec2/part2-concrete-bridges",
+              "ec2/part3-liquid-retaining",
+              "ec2/part4-fastenings"
             ]
           },
-           {
-            "group": "Eurocode 3",
+          {
+            "group": "Eurocode 3 - Design of Steel Structures",
             "pages": [
-              "essentials/markdown",
+              "ec3/overview",
+              "ec3/part1-1-general-rules",
+              "ec3/part1-2-fire-design",
+              "ec3/part1-3-cold-formed",
+              "ec3/part1-4-stainless-steel",
+              "ec3/part1-5-plated-elements",
+              "ec3/part1-6-shell-structures",
+              "ec3/part1-7-planar-plates",
+              "ec3/part1-8-joints",
+              "ec3/part1-9-fatigue",
+              "ec3/part1-10-fracture-toughness",
+              "ec3/part1-11-tension-members",
+              "ec3/part1-12-high-strength-steel",
+              "ec3/part1-13-web-openings",
+              "ec3/part2-steel-bridges",
+              "ec3/part3-1-towers-masts",
+              "ec3/part3-2-chimneys",
+              "ec3/part4-1-silos",
+              "ec3/part4-2-tanks",
+              "ec3/part4-3-pipelines",
+              "ec3/part5-piling"
             ]
           },
-           {
-            "group": "Eurocode 4",
+          {
+            "group": "Eurocode 4 - Composite Steel and Concrete",
             "pages": [
-              "essentials/markdown",
+              "ec4/overview",
+              "ec4/part1-1-general-rules",
+              "ec4/part1-2-fire-design",
+              "ec4/part2-composite-bridges"
             ]
           },
-           {
-            "group": "Eurocode 5",
+          {
+            "group": "Eurocode 5 - Design of Timber Structures",
             "pages": [
-              "essentials/markdown",
+              "ec5/overview",
+              "ec5/part1-1-general-rules",
+              "ec5/part1-2-fire-design",
+              "ec5/part2-bridges"
             ]
           },
-           {
-            "group": "Eurocode 6",
+          {
+            "group": "Eurocode 6 - Design of Masonry Structures",
             "pages": [
-              "essentials/markdown",
+              "ec6/overview",
+              "ec6/part1-1-general-rules",
+              "ec6/part1-2-fire-design",
+              "ec6/part2-design-considerations",
+              "ec6/part3-simplified-methods"
             ]
           },
-           {
-            "group": "Eurocode 7",
+          {
+            "group": "Eurocode 7 - Geotechnical Design",
             "pages": [
-              "essentials/markdown",
+              "ec7/overview",
+              "ec7/part1-general-rules",
+              "ec7/part2-ground-investigation",
+              "ec7/part3-foundations"
             ]
           },
-           {
-            "group": "Eurocode 8",
+          {
+            "group": "Eurocode 8 - Earthquake Resistance",
             "pages": [
-              "essentials/markdown",
+              "ec8/overview",
+              "ec8/part1-general-rules",
+              "ec8/part2-bridges",
+              "ec8/part3-assessment-retrofitting",
+              "ec8/part4-silos-tanks",
+              "ec8/part5-foundations",
+              "ec8/part6-towers-masts"
             ]
           },
-           {
-            "group": "Eurocode 9",
+          {
+            "group": "Eurocode 9 - Design of Aluminium Structures",
             "pages": [
-              "essentials/markdown",
+              "ec9/overview",
+              "ec9/part1-1-general-rules",
+              "ec9/part1-2-fire-design",
+              "ec9/part1-3-cold-formed",
+              "ec9/part1-4-cold-formed-sheeting",
+              "ec9/part1-5-shell-structures"
             ]
           }
         ]
@@ -87,12 +154,27 @@
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Calculation Endpoints",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/calculations/concrete-design",
+              "api-reference/calculations/steel-design",
+              "api-reference/calculations/load-combinations",
+              "api-reference/calculations/section-properties"
+            ]
+          },
+          {
+            "group": "Database Endpoints",
+            "pages": [
+              "api-reference/database/material-properties",
+              "api-reference/database/section-profiles",
+              "api-reference/database/load-cases"
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              "api-reference/webhooks/calculation-complete",
+              "api-reference/webhooks/design-verification"
             ]
           }
         ]
@@ -101,8 +183,8 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Official Eurocodes",
+          "href": "https://eurocodes.jrc.ec.europa.eu/",
           "icon": "book-open-cover"
         },
         {
@@ -126,20 +208,20 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@eurocodedocs.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Calculator",
+      "href": "https://calculator.eurocodedocs.com"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/eurocodedocs",
+      "github": "https://github.com/eurocodedocs",
+      "linkedin": "https://linkedin.com/company/eurocodedocs"
     }
   }
 }
