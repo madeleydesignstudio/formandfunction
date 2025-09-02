@@ -17,7 +17,15 @@
             "group": "Eurocode 1 - Actions on Structures",
             "pages": [
               "ec1/overview",
-              "ec1/part1-1-general-actions"
+              {
+                "group": "Part 1-1: General Actions",
+                "pages": [
+                  "ec1/part1-1/introduction",
+                  "ec1/part1-1/part1",
+                  "ec1/part1-1/part2", 
+                  "ec1/part1-1/part3"
+                ]
+              }
             ]
           },
           {
