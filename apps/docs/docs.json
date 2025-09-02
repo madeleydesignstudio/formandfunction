@@ -18,12 +18,12 @@
             "pages": [
               "ec1/overview",
               {
-                "group": "Part 1-1: Specific weight of materials, self-weight of construction works and imposed loads for buildings",
+                "group": "Part 1-1: Specific weight of materials",
                 "pages": [
                   "ec1/part1-1/introduction",
-                  "ec1/part1-1/part1",
-                  "ec1/part1-1/part2", 
-                  "ec1/part1-1/part3"
+                  "ec1/part1-1/normative-references",
+                  "ec1/part1-1/symbols-and-abbreviations", 
+                  "ec1/part1-1/specific-weight-of-construction-and-stored-materials"
                 ]
               }
             ]
