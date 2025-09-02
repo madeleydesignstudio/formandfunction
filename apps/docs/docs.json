@@ -13,7 +13,6 @@
       {
         "tab": "Guides",
         "groups": [
-         
           {
             "group": "Eurocode 1 - Actions on Structures",
             "pages": [
@@ -69,7 +68,7 @@
               "ec3/part4-3-pipelines",
               "ec3/part5-piling"
             ]
-          },
+          }
         ]
       }
     ],
@@ -79,7 +78,7 @@
           "anchor": "Official Eurocodes",
           "href": "https://eurocodes.jrc.ec.europa.eu/",
           "icon": "book-open-cover"
-        },
+        }
       ]
     }
   },
