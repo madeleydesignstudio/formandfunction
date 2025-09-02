@@ -143,41 +143,6 @@
             ]
           }
         ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Calculation Endpoints",
-            "pages": [
-              "api-reference/calculations/concrete-design",
-              "api-reference/calculations/steel-design",
-              "api-reference/calculations/load-combinations",
-              "api-reference/calculations/section-properties"
-            ]
-          },
-          {
-            "group": "Database Endpoints",
-            "pages": [
-              "api-reference/database/material-properties",
-              "api-reference/database/section-profiles",
-              "api-reference/database/load-cases"
-            ]
-          },
-          {
-            "group": "Webhooks",
-            "pages": [
-              "api-reference/webhooks/calculation-complete",
-              "api-reference/webhooks/design-verification"
-            ]
-          }
-        ]
       }
     ],
     "global": {
