@@ -9,7 +9,10 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:verify": "next build && ls -la .next/routes-manifest.json",
+    "clean": "rm -rf .next",
+    "prebuild": "npm run clean"
   },
   "dependencies": {
     "@ordo/ui": "workspace:*",
