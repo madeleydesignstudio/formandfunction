@@ -61,19 +61,51 @@ const analyzeBeam = async (
 };
 
 const fetchAvailableBeams = async (): Promise<string[]> => {
+  // Fallback beam data
+  const fallbackBeams = ["UB406x178x74", "UB406x178x67"];
+
   const calcEngineUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8081"
       : "https://engine.itsformfunction.com";
 
-  const response = await fetch(`${calcEngineUrl}/beams`);
+  try {
+    const response = await fetch(`${calcEngineUrl}/beams`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      // Add timeout
+      signal: AbortSignal.timeout(10000), // 10 second timeout
+    });
 
-  if (!response.ok) {
-    throw new Error(`Failed to fetch beams: ${response.statusText}`);
+    if (!response.ok) {
+      console.warn(
+        `Beams API responded with ${response.status}: ${response.statusText}`,
+      );
+      return fallbackBeams;
+    }
+
+    const data = await response.json();
+
+    // Handle both response formats
+    if (Array.isArray(data)) {
+      // Direct array from Go API
+      return data.map((beam: any) => beam.section_designation).filter(Boolean);
+    } else if (data.beams && Array.isArray(data.beams)) {
+      // Wrapped format from Python calc engine
+      return data.beams
+        .map((beam: any) => beam.section_designation)
+        .filter(Boolean);
+    } else {
+      console.warn("Invalid response format from beams API");
+      return fallbackBeams;
+    }
+  } catch (error) {
+    console.error("Error fetching beams:", error);
+    return fallbackBeams;
   }
-
-  const data = await response.json();
-  return data.beams.map((beam: any) => beam.section_designation);
 };
 
 export default function BeamCalculator() {
@@ -92,6 +124,10 @@ export default function BeamCalculator() {
     queryKey: ["availableBeams"],
     queryFn: fetchAvailableBeams,
     enabled: !useOptimalBeam,
+    retry: 2, // Limit retries
+    retryDelay: 1000, // 1 second delay between retries
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    cacheTime: 10 * 60 * 1000, // 10 minutes
   });
 
   // Mutation for beam analysis
