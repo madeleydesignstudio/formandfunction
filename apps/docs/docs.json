@@ -55,15 +55,6 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Official Eurocodes",
-          "href": "https://eurocodes.jrc.ec.europa.eu/",
-          "icon": "book-open-cover"
-        }
-      ]
-    }
+    ]
   }
 }
