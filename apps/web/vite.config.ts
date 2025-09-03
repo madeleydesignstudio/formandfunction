@@ -20,7 +20,7 @@ const config = defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://api.itsformfunction.com",
+        target: "http://localhost:8080",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
