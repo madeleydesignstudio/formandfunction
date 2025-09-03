@@ -6,6 +6,6 @@
   "packageManager": "bun",
   "git": true,
   "version": 1,
-  "framework": "vite",
+  "framework": "react-cra",
   "chosenAddOns": ["start"]
 }
