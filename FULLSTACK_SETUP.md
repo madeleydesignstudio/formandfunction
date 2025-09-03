@@ -7,14 +7,14 @@ A comprehensive guide to setting up the complete Form & Function engineering pla
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   React Web     │───▶│   Go API        │───▶│  Steel Beam     │
-│   Frontend      │    │   (Port 8080)   │    │  Database       │
-│   (Port 3001)   │    └─────────────────┘    └─────────────────┘
+│   Frontend      │    │   (Railway)     │    │  Database       │
+│   (Vercel)      │    └─────────────────┘    └─────────────────┘
 └─────────────────┘             │
          │                      │
          │              ┌─────────────────┐
          └─────────────▶│  Python Calc    │
                         │  Engine         │
-                        │  (Port 8081)    │
+                        │  (Railway)      │
                         └─────────────────┘
 ```
 
@@ -78,18 +78,20 @@ The fastest way to get everything running:
 # Clone and setup the project
 git clone <repository-url>
 cd itsformandfunction/formandfunction
+From the root directory:
 
+```bash
 # Install frontend dependencies
 bun install
 
-# Start all services at once
-npm run start-all
+# Start frontend only (calc engine now deployed separately)
+npm run dev
 ```
 
 This will start:
-- Go API on http://localhost:8080
 - React frontend on http://localhost:3001
-- Python calc engine on http://localhost:8081
+
+**Note:** The Python calc engine is now deployed independently on Railway at https://engine.itsformfunction.com
 
 ## Individual Service Setup
 
@@ -127,11 +129,15 @@ bun dev
 - Frontend: http://localhost:3001
 - Should show steel beam data and calculator
 
-### 3. Python Calculation Engine
+### 3. Python Calculation Engine (Independent Project)
 
+The calc engine is now a separate project deployed on Railway.
+
+**For local development:**
 ```bash
-# Navigate to calc engine directory
-cd formandfunction/apps/calc-engine
+# Clone the independent calc engine project
+git clone <formandfunction-calcengine-repo-url>
+cd formandfunction-calcengine
 
 # Run setup script (recommended)
 ./start.sh
@@ -144,9 +150,10 @@ python main.py
 ```
 
 **Verification:**
-- Calc engine: http://localhost:8081
-- API docs: http://localhost:8081/docs
-- Health check: http://localhost:8081/health
+- Local: http://localhost:8081
+- Production: https://engine.itsformfunction.com
+- API docs: https://engine.itsformfunction.com/docs
+- Health check: https://engine.itsformfunction.com/health
 
 ## Development Workflow
 
@@ -164,23 +171,20 @@ cd formandfunction/apps/web
 bun dev
 ```
 
-**Calc Engine only:**
+**Calc Engine (Independent Project):**
 ```bash
-cd formandfunction/apps/calc-engine
+cd ../formandfunction-calcengine  # Separate repository
 ./start.sh
 ```
 
 ### Running Multiple Services
 
-**Frontend + Calc Engine:**
+**Frontend Only:**
 ```bash
-npm run full-stack
+npm run dev
 ```
 
-**All services:**
-```bash
-npm run start-all
-```
+**Note:** The calc engine is now deployed independently on Railway. For full local development, you'll need to run the calc engine from its separate repository.
 
 ### Available Scripts
 
@@ -192,15 +196,8 @@ npm run dev              # Start frontend dev server
 npm run build            # Build frontend for production
 npm run lint             # Lint TypeScript/React code
 
-# Calc engine operations
-npm run calc:start       # Start calc engine with setup
-npm run calc:dev         # Start calc engine directly
-npm run calc:test        # Run calc engine tests
-npm run calc:health      # Check calc engine health
-
-# Combined operations
-npm run full-stack       # Frontend + calc engine
-npm run start-all        # All three services
+# Note: Calc engine is now an independent project on Railway
+# See formandfunction-calcengine repository for calc engine operations
 ```
 
 ## Testing the Stack
@@ -211,11 +208,11 @@ npm run start-all        # All three services
 # Test Go API
 curl http://localhost:8080/beams
 
-# Test Python calc engine
-curl http://localhost:8081/health
+# Test Python calc engine (Production)
+curl https://engine.itsformfunction.com/health
 
-# Test calc engine calculation
-curl -X POST http://localhost:8081/analyze \
+# Test calc engine calculation (Production)
+curl -X POST https://engine.itsformfunction.com/analyze \
   -H "Content-Type: application/json" \
   -d '{
     "applied_load": 10.0,
@@ -236,9 +233,12 @@ curl -X POST http://localhost:8081/analyze \
 ### 3. End-to-End Test
 
 ```bash
-# Run automated calc engine tests
-cd apps/calc-engine
+# Run automated calc engine tests (from separate repository)
+cd ../formandfunction-calcengine
 python test_calc.py
+
+# Or test production directly
+python test_calc.py https://engine.itsformfunction.com
 ```
 
 ## Troubleshooting
@@ -266,10 +266,11 @@ lsof -ti:8080 | xargs kill
 - Check Bun version: `bun --version`
 - Ensure all workspace dependencies are installed
 
-**Python calc engine issues:**
+**Python calc engine issues (Independent Project):**
 - Verify Python 3.8+: `python3 --version`
 - Recreate virtual environment: `rm -rf venv && python3 -m venv venv`
-- Check API connectivity: The calc engine needs the Go API running
+- Check API connectivity: The calc engine needs the Go API accessible
+- For local development, clone the separate formandfunction-calcengine repository
 
 **CORS issues:**
 - Ensure all services are running on specified ports
@@ -277,65 +278,56 @@ lsof -ti:8080 | xargs kill
 - Verify CORS settings in Go API and Python calc engine
 
 ### Service Dependencies
+**Service Dependencies**
 
-**Start order for manual setup:**
-1. Go API (port 8080) - Must start first
-2. Python calc engine (port 8081) - Depends on Go API
-3. React frontend (port 3001) - Can start independently
+**Current Architecture:**
+1. Go API (Railway) - Independent deployment
+2. Python calc engine (Railway) - Independent deployment, depends on Go API
+3. React frontend (Vercel) - Independent deployment, calls both APIs
 
 **Service health endpoints:**
-- Go API: http://localhost:8080/ 
-- Calc engine: http://localhost:8081/health
-- Frontend: http://localhost:3001 (visual check)
+- Go API: https://your-go-api.railway.app/
+- Calc engine: https://engine.itsformfunction.com/health
+- Frontend: https://your-frontend.vercel.app (visual check)
 
 ## Production Deployment
 
 ### Environment Variables
+**Environment Variables**
+
+**Go API (Railway):**
+- `PORT`: Automatically set by Railway
+
+**Python Calc Engine (Railway - Independent Project):**
+- `API_BASE_URL`: Production Go API URL
+- `PORT`: Automatically set by Railway
+
+**React Frontend (Vercel):**
+- Environment-specific URLs configured in code
+- Development: localhost URLs
+- Production: Railway deployment URLs
+
+### Railway Deployments
 
 **Go API:**
-- `PORT`: Server port (default: 8080)
+- Repository: `formandfunction-api`
+- Platform: Railway
+- Custom domain: Configure as needed
 
 **Python Calc Engine:**
-- `API_BASE_URL`: Go API URL (default: http://localhost:8080)
-- `CALC_ENGINE_PORT`: Calc engine port (default: 8081)
+- Repository: `formandfunction-calcengine` (Independent project)
+- Platform: Railway
+- Custom domain: `engine.itsformfunction.com`
+- Docker-based deployment
 
 **React Frontend:**
-- Built-in proxy handles API routing in development
-- For production, configure reverse proxy (nginx/Apache)
-
-### Docker Setup (Optional)
-
-Create `docker-compose.yml` in project root:
-
-```yaml
-version: '3.8'
-services:
-  api:
-    build: ./formandfunction-api
-    ports:
-      - "8080:8080"
-    
-  calc-engine:
-    build: ./formandfunction/apps/calc-engine
-    ports:
-      - "8081:8081"
-    depends_on:
-      - api
-    environment:
-      - API_BASE_URL=http://api:8080
-    
-  frontend:
-    build: ./formandfunction/apps/web
-    ports:
-      - "3001:3001"
-    depends_on:
-      - api
-      - calc-engine
-```
+- Repository: `formandfunction` (turborepo)
+- Platform: Vercel
+- Custom domain: Configure as needed
 
 ## API Documentation
 
-### Go API Endpoints
+### Go API Endpoints (Railway)
 - `GET /` - API information
 - `GET /beams` - List all steel beams
 - `GET /beams/{designation}` - Get specific beam
@@ -343,21 +335,25 @@ services:
 - `PUT /beams/{designation}` - Update beam
 - `DELETE /beams/{designation}` - Delete beam
 
-### Python Calc Engine Endpoints  
+### Python Calc Engine Endpoints (Railway - Independent)
 - `GET /` - Service information
 - `GET /health` - Detailed health check
 - `GET /beams` - Proxy to Go API beams
 - `POST /analyze` - Perform beam analysis
 - `GET /docs` - Interactive API documentation
+- Base URL: https://engine.itsformfunction.com
 
 ## Contributing
 
 ### Development Setup
-1. Fork the repository
-2. Create a feature branch
+1. Fork the repositories:
+   - `formandfunction` (turborepo with frontend)
+   - `formandfunction-api` (Go API)
+   - `formandfunction-calcengine` (Python calc engine)
+2. Create feature branches in relevant repositories
 3. Make changes and test locally
 4. Run linting and tests
-5. Submit a pull request
+5. Submit pull requests to respective repositories
 
 ### Code Style
 - **Go**: `gofmt` and `go vet`
@@ -365,17 +361,20 @@ services:
 - **Python**: Black formatter + Flake8 linter
 
 ### Testing
-- Go: `go test ./...`
-- Frontend: `npm run test`
-- Python: `python test_calc.py`
+- Go API: `go test ./...` (in formandfunction-api repo)
+- Frontend: `npm run test` (in formandfunction repo)
+- Python Calc Engine: `python test_calc.py` (in formandfunction-calcengine repo)
 
 ## Support
 
 For issues and questions:
 1. Check this setup guide
-2. Review service-specific README files
-3. Check API documentation at http://localhost:8081/docs
-4. Submit an issue on the repository
+2. Review service-specific README files in respective repositories
+3. Check API documentation at https://engine.itsformfunction.com/docs
+4. Submit issues to the appropriate repository:
+   - Frontend issues: `formandfunction` repository
+   - Go API issues: `formandfunction-api` repository  
+   - Calc engine issues: `formandfunction-calcengine` repository
 
 ---
 

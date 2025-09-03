@@ -42,7 +42,7 @@ const analyzeBeam = async (
   const calcEngineUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8081"
-      : "https://www.engine.itsformfunction.com";
+      : "https://engine.itsformfunction.com";
 
   const response = await fetch(`${calcEngineUrl}/analyze`, {
     method: "POST",
@@ -64,7 +64,7 @@ const fetchAvailableBeams = async (): Promise<string[]> => {
   const calcEngineUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8081"
-      : "https://www.engine.itsformfunction.com";
+      : "https://engine.itsformfunction.com";
 
   const response = await fetch(`${calcEngineUrl}/beams`);
 
