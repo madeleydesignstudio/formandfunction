@@ -1,5 +1,6 @@
 ---
-title: 'Imposed Loads on Buildings'
+title: "Imposed Loads on Buildings"
+mode: "wide"
 ---
 
 ## 6.1 Design situations
@@ -74,7 +75,7 @@ title: 'Imposed Loads on Buildings'
 
 **NOTE** Characteristic values of concentrated loads are given in 6.5.
 
-(3) Imposed loads acting on floors, beams and roofs may be reduced by a reduction factor α_A according to 6.5.3.2.
+(3) Imposed loads acting on floors, beams and roofs may be reduced by a reduction factor α\_A according to 6.5.3.2.
 
 ### 6.4.2 Columns and walls
 
@@ -82,7 +83,7 @@ title: 'Imposed Loads on Buildings'
 
 (2) Where imposed loads from several storeys act on columns and walls, the maximum axial force may be calculated assuming the imposed loads on each storey to be uniformly distributed.
 
-(3) Where imposed loads from several storeys act on columns and walls, the imposed loads may be reduced by a factor α_n according to 6.5.3.2.
+(3) Where imposed loads from several storeys act on columns and walls, the imposed loads may be reduced by a factor α\_n according to 6.5.3.2.
 
 ## 6.5 Characteristic values of imposed loads
 
@@ -123,33 +124,34 @@ title: 'Imposed Loads on Buildings'
 
 **Table 6.1 - (NDP) Categories of use and values for q_k and Q_k**
 
-| Category | Specific Use | Sub-categories with examples | q_k [kN/m²] | Q_k [kN] | Typical dimension of the area loaded by Q_k (m × m) |
-|----------|--------------|------------------------------|-------------|----------|---------------------------------------------------|
-| A | Areas for domestic and residential activities | A1 Rooms in residential buildings and houses, including corridors. | 2,0 | 2,0 | 0,05 × 0,05 |
-|   |   | A2 Bedrooms, wards, dormitories, private bathrooms and toilets in hospitals, hotels, hostels and other institutional residential occupancies. | 2,0 | 2,0 | 0,05 × 0,05 |
-| B^a | Public areas (not susceptible to crowding) | B1 Office areas for general use including corridors other than archive / storage areas (see Category E) | 3,0 | 3,0 | 0,05 × 0,05 |
-|   |   | B2 Kitchens, communal bathrooms and toilets in hospitals, hotels, hostels and other institutional residential occupancies. | 3,0 | 3,0 | 0,05 × 0,05 |
-| C^b,c,d | Public areas where people can congregate (with the exception of areas defined under category A, B, and D) | C1: Areas with tables, etc. e.g. areas in schools, cafés, restaurants, dining halls, reading rooms, receptions. | 3,0 | 4,0 | 0,05 × 0,05 |
-|   |   | C2: Areas with fixed seats, e.g. areas in churches, theatres, cinemas, conference rooms, lecture halls, assembly halls, waiting rooms. | 4,0 | 4,0 | 0,05 × 0,05 |
-|   |   | C3: Areas without obstacles for moving people, e.g. areas in museums, exhibition rooms, etc. and corridors to areas not belonging to categories A1, B1 and C5. | 5,0 | 4,0 | 0,05 × 0,05 |
-|   |   | C4: Areas with possible physical activities, e.g. dance halls, gymnastic rooms, stages. | 5,0 | 7,0 | 0,05 × 0,05 |
-|   |   | C5: Areas susceptible to large crowds, e.g. in buildings for public events including corridors like concert halls, sports halls including stands, and railway platforms. | 7,5 | 4,5 | 0,05 × 0,05 |
-| D | Shopping areas | D1: Areas in retail shops | 4,0 | 4,0 | 0,05 × 0,05 |
-|   |   | D2: Areas in department stores | 5,0 | 7,0 | 0,05 × 0,05 |
-| E | Areas for archive, storage and industrial use^e | E1: Areas susceptible to accumulation of goods, including access areas^f | 7,5 | 7,0 | ^a |
-|   |   | E2: Industrial use^g,h,i,j | ^a |   |   |
-| F | Garages and vehicle traffic areas (excluding ordinary roads and bridges) | Gross vehicle weight ≤ 30 kN: F1 Traffic and parking areas for light vehicles (≤ 8 seats not including driver) e.g. garages; parking areas, parking halls | 2,5 | 20 | ^a |
-| G |   | 30 kN < Gross vehicle weight ≤ 160 kN: G1 Traffic and parking areas for medium vehicles (on 2 axles) e.g. access routes, delivery zones, zones accessible to fire engines | 5,0 | 90 | 0,2 × 0,2 |
-|   |   | Gross vehicle weight > 160 kN: G2 Traffic and parking areas for heavy vehicles^k | ^a |   |   |
-| H^l | Roofs not accessible except for normal maintenance and repair |   | 0,4 | 1,0 | 0,05 × 0,05 |
-| I | Roofs accessible with occupancy according to categories A to G |   | See categories A to G |   |   |
-| K | Roofs accessible for special services, such as classes HC for helicopter landing areas |   | 5,0 | See Table 6.4 |   |
-| S | Stairs and landings | S1 Stairs and landings to areas belonging to category A1 and B1.^m | See categories A1 and B1 |   | 0,05 × 0,05 |
-|   |   | S2 Stairs and landings for tribunes without fixed seats that are defined as escape ways.^m | 7,5 | 3,0 | 0,05 × 0,05 |
-|   |   | S3 Stairs and landings not belonging to category S1 or S2.^m | 5,0 | 2,0 | 0,05 × 0,05 |
-| T | Terraces and balconies | T1 Roof terraces, access balconies, balconies, loggias, etc.^n | 3,0 | 2,0 | 0,05 × 0,05 |
+| Category | Specific Use                                                                                              | Sub-categories with examples                                                                                                                                               | q_k [kN/m²]              | Q_k [kN]      | Typical dimension of the area loaded by Q_k (m × m) |
+| -------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------------- | --------------------------------------------------- |
+| A        | Areas for domestic and residential activities                                                             | A1 Rooms in residential buildings and houses, including corridors.                                                                                                         | 2,0                      | 2,0           | 0,05 × 0,05                                         |
+|          |                                                                                                           | A2 Bedrooms, wards, dormitories, private bathrooms and toilets in hospitals, hotels, hostels and other institutional residential occupancies.                              | 2,0                      | 2,0           | 0,05 × 0,05                                         |
+| B^a      | Public areas (not susceptible to crowding)                                                                | B1 Office areas for general use including corridors other than archive / storage areas (see Category E)                                                                    | 3,0                      | 3,0           | 0,05 × 0,05                                         |
+|          |                                                                                                           | B2 Kitchens, communal bathrooms and toilets in hospitals, hotels, hostels and other institutional residential occupancies.                                                 | 3,0                      | 3,0           | 0,05 × 0,05                                         |
+| C^b,c,d  | Public areas where people can congregate (with the exception of areas defined under category A, B, and D) | C1: Areas with tables, etc. e.g. areas in schools, cafés, restaurants, dining halls, reading rooms, receptions.                                                            | 3,0                      | 4,0           | 0,05 × 0,05                                         |
+|          |                                                                                                           | C2: Areas with fixed seats, e.g. areas in churches, theatres, cinemas, conference rooms, lecture halls, assembly halls, waiting rooms.                                     | 4,0                      | 4,0           | 0,05 × 0,05                                         |
+|          |                                                                                                           | C3: Areas without obstacles for moving people, e.g. areas in museums, exhibition rooms, etc. and corridors to areas not belonging to categories A1, B1 and C5.             | 5,0                      | 4,0           | 0,05 × 0,05                                         |
+|          |                                                                                                           | C4: Areas with possible physical activities, e.g. dance halls, gymnastic rooms, stages.                                                                                    | 5,0                      | 7,0           | 0,05 × 0,05                                         |
+|          |                                                                                                           | C5: Areas susceptible to large crowds, e.g. in buildings for public events including corridors like concert halls, sports halls including stands, and railway platforms.   | 7,5                      | 4,5           | 0,05 × 0,05                                         |
+| D        | Shopping areas                                                                                            | D1: Areas in retail shops                                                                                                                                                  | 4,0                      | 4,0           | 0,05 × 0,05                                         |
+|          |                                                                                                           | D2: Areas in department stores                                                                                                                                             | 5,0                      | 7,0           | 0,05 × 0,05                                         |
+| E        | Areas for archive, storage and industrial use^e                                                           | E1: Areas susceptible to accumulation of goods, including access areas^f                                                                                                   | 7,5                      | 7,0           | ^a                                                  |
+|          |                                                                                                           | E2: Industrial use^g,h,i,j                                                                                                                                                 | ^a                       |               |                                                     |
+| F        | Garages and vehicle traffic areas (excluding ordinary roads and bridges)                                  | Gross vehicle weight ≤ 30 kN: F1 Traffic and parking areas for light vehicles (≤ 8 seats not including driver) e.g. garages; parking areas, parking halls                  | 2,5                      | 20            | ^a                                                  |
+| G        |                                                                                                           | 30 kN \< Gross vehicle weight ≤ 160 kN: G1 Traffic and parking areas for medium vehicles (on 2 axles) e.g. access routes, delivery zones, zones accessible to fire engines | 5,0                      | 90            | 0,2 × 0,2                                           |
+|          |                                                                                                           | Gross vehicle weight \> 160 kN: G2 Traffic and parking areas for heavy vehicles^k                                                                                          | ^a                       |               |                                                     |
+| H^l      | Roofs not accessible except for normal maintenance and repair                                             |                                                                                                                                                                            | 0,4                      | 1,0           | 0,05 × 0,05                                         |
+| I        | Roofs accessible with occupancy according to categories A to G                                            |                                                                                                                                                                            | See categories A to G    |               |                                                     |
+| K        | Roofs accessible for special services, such as classes HC for helicopter landing areas                    |                                                                                                                                                                            | 5,0                      | See Table 6.4 |                                                     |
+| S        | Stairs and landings                                                                                       | S1 Stairs and landings to areas belonging to category A1 and B1.^m                                                                                                         | See categories A1 and B1 |               | 0,05 × 0,05                                         |
+|          |                                                                                                           | S2 Stairs and landings for tribunes without fixed seats that are defined as escape ways.^m                                                                                 | 7,5                      | 3,0           | 0,05 × 0,05                                         |
+|          |                                                                                                           | S3 Stairs and landings not belonging to category S1 or S2.^m                                                                                                               | 5,0                      | 2,0           | 0,05 × 0,05                                         |
+| T        | Terraces and balconies                                                                                    | T1 Roof terraces, access balconies, balconies, loggias, etc.^n                                                                                                             | 3,0                      | 2,0           | 0,05 × 0,05                                         |
 
 **Footnotes:**
+
 - ^a Specific imposed loading and their impact area may be specified by the relevant authority or, where not specified, agreed for a specific project by the relevant parties.
 - ^b Depending on their anticipated uses, areas likely to be categorized as C2, C3, C4 may be categorized as C5 in the event of a large crowd as agreed for a specific project by the relevant parties.
 - ^c Attention is drawn to dynamic effects, see 6.5.2(4) and 6.2.2, in particular for C4 and C5.
@@ -169,82 +171,86 @@ title: 'Imposed Loads on Buildings'
 
 #### 6.5.3.1 Partitions treated as imposed loads
 
-(1) The self-weight of partitions may be taken into account by introducing a uniformly distributed load q_{k,p} as defined in (2) and (3) provided that the following conditions are verified:
+(1) The self-weight of partitions may be taken into account by introducing a uniformly distributed load q\_k,p as defined in (2) and (3) provided that the following conditions are verified:
 
 - the relevant floor allows a sufficient distribution of a line load orthogonal to the intended orientation of the partition, and
-- the self-weight of the partition is Q_{k,p} ≤ 3,0 kN/m wall length.
+- the self-weight of the partition is Q\_k,p ≤ 3,0 kN/m wall length.
 
 **NOTE** Partitions are elements other than structural; as such, according to 5.2(2), they are expected to be classified as permanent actions, typically free for their spatial variation. The simplified approach provided in (1) only applies when the conditions defined above are verified. See (4) for heavier partitions.
 
-(2) The uniformly distributed load q_{k,p} defined in (1) should be added to the imposed loads of floors obtained from 6.5.2(2).
+(2) The uniformly distributed load q\_k,p defined in (1) should be added to the imposed loads of floors obtained from 6.5.2(2).
 
-(3) The value of this uniformly distributed load q_{k,p} for partitions with a self-weight Q_{k,p} ≤ 3,0 kN/m wall length should be based on the self-weight of the partitions.
+(3) The value of this uniformly distributed load q\_k,p for partitions with a self-weight Q\_k,p ≤ 3,0 kN/m wall length should be based on the self-weight of the partitions.
 
-**NOTE** In such a case, q_{k,p} is derived from Formula (6.1) unless the National Annex gives a different value.
+**NOTE** In such a case, q\_k,p is derived from Formula (6.1) unless the National Annex gives a different value.
 
 **Formula (6.1):**
+
 ```
 q_{k,p} = max{0,35 kN/m²; (0,4/m) Q_{k,p}}
 ```
 
 where:
-- Q_{k,p} is expressed in kN/m wall length;
-- q_{k,p} is expressed in kN/m².
 
-(4) The value of the uniformly distributed load q_{k,p} for partitions with a self-weight Q_{k,p} > 3,0 kN/m wall length should be determined taking account of:
+- Q\_k,p is expressed in kN/m wall length;
+- q\_k,p is expressed in kN/m².
+
+(4) The value of the uniformly distributed load q\_k,p for partitions with a self-weight Q\_k,p \> 3,0 kN/m wall length should be determined taking account of:
 
 - the locations and directions of the partitions;
 - the structural form of the floors.
 
-**NOTE** The National Annex can set specific rules to derive the value of the uniformly distributed load q_{k,p} for partitions with a self-weight Q_{k,p} > 3,0 kN/m wall length.
+**NOTE** The National Annex can set specific rules to derive the value of the uniformly distributed load q\_k,p for partitions with a self-weight Q\_k,p \> 3,0 kN/m wall length.
 
 #### 6.5.3.2 Reduction factors
 
-(1) The reduction factors α_A and α_n specified in this clause, which are applicable to the q_k values for imposed loads, may be used if specified by the relevant authority, or, where not specified, as agreed for a specific project by the relevant parties.
+(1) The reduction factors α\_A and α\_n specified in this clause, which are applicable to the q_k values for imposed loads, may be used if specified by the relevant authority, or, where not specified, as agreed for a specific project by the relevant parties.
 
-**NOTE** α_A is the reduction factor relevant to imposed loads on floors, beams and roofs; α_n is the reduction factor relevant to columns and walls depending on the number of storeys above such columns and walls.
+**NOTE** α\_A is the reduction factor relevant to imposed loads on floors, beams and roofs; α\_n is the reduction factor relevant to columns and walls depending on the number of storeys above such columns and walls.
 
-(2) The reduction factors α_A and α_n may be mutually combined when dealing with multi-storey buildings.
+(2) The reduction factors α\_A and α\_n may be mutually combined when dealing with multi-storey buildings.
 
-**NOTE** The reduction factors α_A and α_n can be mutually combined provided that the product α_A × α_n is not less than 0,50 unless the National Annex gives different rules.
+**NOTE** The reduction factors α\_A and α\_n can be mutually combined provided that the product α\_A × α\_n is not less than 0,50 unless the National Annex gives different rules.
 
-(3) The reduction factors α_A and α_n should not be applied for accidental and seismic design situations, including fire.
+(3) The reduction factors α\_A and α\_n should not be applied for accidental and seismic design situations, including fire.
 
-(4) In accordance with 6.4.1(3) a reduction factor α_A may be applied to the q_k values for imposed loads for floors, beams and accessible roofs.
+(4) In accordance with 6.4.1(3) a reduction factor α\_A may be applied to the q_k values for imposed loads for floors, beams and accessible roofs.
 
-**NOTE 1** The value for the reduction factor α_A for categories A, B, C, D and category I (accessible roofs) is determined from Formula (6.2) unless the National Annex gives an alternative method and/or specific rules for the use of the reduction factor α_A, including its application for partitions and for specific categories C and D, where the reduction factor could be inappropriate to use.
+**NOTE 1** The value for the reduction factor α\_A for categories A, B, C, D and category I (accessible roofs) is determined from Formula (6.2) unless the National Annex gives an alternative method and/or specific rules for the use of the reduction factor α\_A, including its application for partitions and for specific categories C and D, where the reduction factor could be inappropriate to use.
 
 **Formula (6.2):**
+
 ```
 α_A = 0,5 + 10/A ≤ 1,0
 ```
 
-with the restriction for categories C and D: α_A ≥ 0,6
+with the restriction for categories C and D: α\_A ≥ 0,6
 
 where A is the tributary area expressed in m².
 
-**NOTE 2** For continuous structures, the reduction factor α_A generally differs from span to span (see Figures 6.1 and 6.2). As a simplification, the same value can apply uniformly using the maximum of the α_A values calculated for different tributary areas (see Figure 6.3).
+**NOTE 2** For continuous structures, the reduction factor α\_A generally differs from span to span (see Figures 6.1 and 6.2). As a simplification, the same value can apply uniformly using the maximum of the α\_A values calculated for different tributary areas (see Figure 6.3).
 
-**Figure 6.1** - Tributary areas relevant to mid-spans and end spans for one-way slabs (with A2 > A1 > A3) - example of continuous beams supporting continuous slabs
+**Figure 6.1** - Tributary areas relevant to mid-spans and end spans for one-way slabs (with A2 \> A1 \> A3) - example of continuous beams supporting continuous slabs
 
-**Figure 6.2** - Load reduction with α_i values differing from span to span (with α_3 > α_1 > α_2)
+**Figure 6.2** - Load reduction with α\_i values differing from span to span (with α\_3 \> α\_1 \> α\_2)
 
-**Figure 6.3** - Load reduction with uniform α_i values (simplified so that α_max = α_3)
+**Figure 6.3** - Load reduction with uniform α\_i values (simplified so that α\_max = α\_3)
 
-(5) In accordance with 6.4.2(3) and provided that the area is classified according to Table 6.1 (NDP) into the categories A to D and T, for columns and walls the imposed loads on the floors supported by the column or wall under consideration may be multiplied by the reduction factor α_n.
+(5) In accordance with 6.4.2(3) and provided that the area is classified according to Table 6.1 (NDP) into the categories A to D and T, for columns and walls the imposed loads on the floors supported by the column or wall under consideration may be multiplied by the reduction factor α\_n.
 
-**NOTE** The values for α_n can be calculated from Formula (6.3) unless the National Annex gives an alternative method.
+**NOTE** The values for α\_n can be calculated from Formula (6.3) unless the National Annex gives an alternative method.
 
 **Formula (6.3):**
+
 ```
 α_n = 0,7 + 0,6/n ≤ 1,0
 ```
 
-where α_n is calculated for each floor considering the number of floors n above the column or wall under consideration.
+where α\_n is calculated for each floor considering the number of floors n above the column or wall under consideration.
 
-(6) When the imposed load is applied as an accompanying action in accordance with EN 1990, the combination of the factors ψ (EN 1990:2023, Table A.1.7) and α_n may be considered.
+(6) When the imposed load is applied as an accompanying action in accordance with EN 1990, the combination of the factors ψ (EN 1990:2023, Table A.1.7) and α\_n may be considered.
 
-**NOTE** The two factors ψ and α_n can be combined, unless the National Annex gives different rules.
+**NOTE** The two factors ψ and α\_n can be combined, unless the National Annex gives different rules.
 
 #### 6.5.3.3 Actions induced by forklifts
 
@@ -292,14 +298,14 @@ where α_n is calculated for each floor considering the number of floors n above
 
 **Table 6.2 - Dimensions of forklift according to classes FL**
 
-| Class of Forklift | Net weight [kN] | Hoisting load [kN] | Width of axle W_{f,axle} [m] | Overall width W_{f,overall} [m] | Overall length l_f [m] |
-|-------------------|-----------------|-------------------|------------------------------|--------------------------------|----------------------|
-| FL 1 | 21 | 10 | 0,85 | 1,00 | 2,60 |
-| FL 2 | 31 | 15 | 0,95 | 1,10 | 3,00 |
-| FL 3 | 44 | 25 | 1,00 | 1,20 | 3,30 |
-| FL 4 | 60 | 40 | 1,20 | 1,40 | 4,00 |
-| FL 5 | 90 | 60 | 1,50 | 1,90 | 4,60 |
-| FL 6 | 110 | 80 | 1,80 | 2,30 | 5,10 |
+| Class of Forklift | Net weight [kN] | Hoisting load [kN] | Width of axle W\_f,axle [m] | Overall width W\_f,overall [m] | Overall length l_f [m] |
+| ----------------- | --------------- | ------------------ | --------------------------- | ------------------------------ | ---------------------- |
+| FL 1              | 21              | 10                 | 0,85                        | 1,00                           | 2,60                   |
+| FL 2              | 31              | 15                 | 0,95                        | 1,10                           | 3,00                   |
+| FL 3              | 44              | 25                 | 1,00                        | 1,20                           | 3,30                   |
+| FL 4              | 60              | 40                 | 1,20                        | 1,40                           | 4,00                   |
+| FL 5              | 90              | 60                 | 1,50                        | 1,90                           | 4,60                   |
+| FL 6              | 110             | 80                 | 1,80                        | 2,30                           | 5,10                   |
 
 **Figure 6.4** - Dimensions of forklifts
 
@@ -308,17 +314,18 @@ where α_n is calculated for each floor considering the number of floors n above
 **Table 6.3 - Axle loads of forklifts**
 
 | Class of forklifts | Axle load Q_k [kN] |
-|-------------------|-------------------|
-| FL 1 | 26 |
-| FL 2 | 40 |
-| FL 3 | 63 |
-| FL 4 | 90 |
-| FL 5 | 140 |
-| FL 6 | 170 |
+| ------------------ | ------------------ |
+| FL 1               | 26                 |
+| FL 2               | 40                 |
+| FL 3               | 63                 |
+| FL 4               | 90                 |
+| FL 5               | 140                |
+| FL 6               | 170                |
 
-(3) The static characteristic value of the vertical axle load Q_k should be increased by the dynamic amplification factor φ using Formula (6.4) to derive the characteristic value of the dynamic action Q_{k,dyn}:
+(3) The static characteristic value of the vertical axle load Q_k should be increased by the dynamic amplification factor φ using Formula (6.4) to derive the characteristic value of the dynamic action Q\_k,dyn:
 
 **Formula (6.4):**
+
 ```
 Q_{k,dyn} = φ Q_k
 ```
@@ -326,12 +333,13 @@ Q_{k,dyn} = φ Q_k
 **NOTE** The dynamic amplification factor φ for forklifts takes into account the inertial effects caused by acceleration and deceleration of the hoisting load.
 
 (4) The dynamic factor φ for forklifts should be taken as:
+
 - φ = 1,40 for pneumatic tyres;
 - φ = 2,00 for solid tyres.
 
 (5) For forklifts having a net weight greater than 110 kN the loads should be defined by a more accurate analysis.
 
-(6) The vertical axle load Q_k and Q_{k,dyn} of a forklift should be arranged according to Figure 6.4.
+(6) The vertical axle load Q_k and Q\_k,dyn of a forklift should be arranged according to Figure 6.4.
 
 (7) Horizontal loads due to acceleration or deceleration of forklifts may be taken as 30% of the vertical axle loads Q_k. Dynamic factors may be neglected.
 
@@ -392,14 +400,14 @@ Q_{k,dyn} = φ Q_k
 **Table 6.4 - (NDP) Imposed loads on roofs of category K for helicopters**
 
 | Class of helicopter | Take-off load Q of helicopter | Take-off load Q_k | Dimension of the loaded area (m × m) |
-|--------------------|-------------------------------|------------------|-------------------------------------|
-| HC1 | Q ≤ 20 kN | Q_k = 20 kN | 0,2 × 0,2 |
-| HC2 | 20 kN < Q ≤ 60 kN | Q_k = 60 kN | 0,3 × 0,3 |
-| HC3 | 60 kN < Q ≤ 120 kN | Q_k = 120 kN | 0,3 × 0,3 |
+| ------------------- | ----------------------------- | ----------------- | ------------------------------------ |
+| HC1                 | Q ≤ 20 kN                     | Q_k = 20 kN       | 0,2 × 0,2                            |
+| HC2                 | 20 kN \< Q ≤ 60 kN            | Q_k = 60 kN       | 0,3 × 0,3                            |
+| HC3                 | 60 kN \< Q ≤ 120 kN           | Q_k = 120 kN      | 0,3 × 0,3                            |
 
 #### 6.5.6.4 Access ladders and walkways
 
-(1) Access ladders and walkways should be assumed to be loaded according to category H for a roof slope < 20°.
+(1) Access ladders and walkways should be assumed to be loaded according to category H for a roof slope \< 20°.
 
 (2) For walkways which are part of a designated escape route, q_k should be according to categories A to D as relevant.
 
@@ -438,24 +446,24 @@ Q_{k,dyn} = φ Q_k
 
 **Table 6.5 - (NDP) Horizontal loads on barriers (except guard rails for areas only accessible for maintenance and repair)**
 
-| Category | Specific Use | q_k [kN/m] |
-|----------|--------------|------------|
-| A | Areas for domestic and residential activities | 0,8 |
-| B | Public areas (not susceptible to crowding) | 0,8 |
-| C1 | Areas with tables | 1,0 |
-| C2 | Areas with fixed seats | 1,0 |
-| C3 | Areas without obstacles for moving people | 1,0 |
-| C4 | Areas with possible physical activities | 1,0 |
-| D | Shopping areas | 1,0 |
-| C5 | Areas susceptible to large crowds | 3,0 |
-| E^a | Areas for archive, storage and industrial use | 2,0 |
-| F | Garages and vehicle traffic areas for gross vehicle weight ≤ 30 kN | See EN 1991-1-7 |
-| G | Garages and vehicle traffic areas for gross vehicle weight > 30 kN | See EN 1991-1-7 |
-| H | Roofs not accessible except for normal maintenance and repair | 0,8 |
-| I | Roofs accessible with occupancy according to categories A to G | See categories A to G |
-| K | Roofs accessible for special services, such as classes HC for helicopter landing areas | 1,0 |
-| S | Stairs and landings | See categories A to G |
-| T | Balconies and terraces | See categories A to G |
+| Category | Specific Use                                                                           | q_k [kN/m]            |
+| -------- | -------------------------------------------------------------------------------------- | --------------------- |
+| A        | Areas for domestic and residential activities                                          | 0,8                   |
+| B        | Public areas (not susceptible to crowding)                                             | 0,8                   |
+| C1       | Areas with tables                                                                      | 1,0                   |
+| C2       | Areas with fixed seats                                                                 | 1,0                   |
+| C3       | Areas without obstacles for moving people                                              | 1,0                   |
+| C4       | Areas with possible physical activities                                                | 1,0                   |
+| D        | Shopping areas                                                                         | 1,0                   |
+| C5       | Areas susceptible to large crowds                                                      | 3,0                   |
+| E^a      | Areas for archive, storage and industrial use                                          | 2,0                   |
+| F        | Garages and vehicle traffic areas for gross vehicle weight ≤ 30 kN                     | See EN 1991-1-7       |
+| G        | Garages and vehicle traffic areas for gross vehicle weight \> 30 kN                    | See EN 1991-1-7       |
+| H        | Roofs not accessible except for normal maintenance and repair                          | 0,8                   |
+| I        | Roofs accessible with occupancy according to categories A to G                         | See categories A to G |
+| K        | Roofs accessible for special services, such as classes HC for helicopter landing areas | 1,0                   |
+| S        | Stairs and landings                                                                    | See categories A to G |
+| T        | Balconies and terraces                                                                 | See categories A to G |
 
 **Footnote:** ^a For areas of category E, the horizontal loads depend on the occupancy. Therefore, the value of q_k is defined as a minimum value and should be checked for the specific occupancy and actual storage conditions.
 
@@ -476,3 +484,5 @@ Q_{k,dyn} = φ Q_k
 (1) Barriers should be designed for a vertical load, which is either a concentrated load Q_k or a uniformly distributed load q_k, whichever gives the most adverse design condition in combination with the horizontal loading given in 6.6.2.
 
 **NOTE** The value of Q_k is 1 kN and the value for q_k is 0,6 kN/m unless different values are given in the National Annex.
+
+Test
