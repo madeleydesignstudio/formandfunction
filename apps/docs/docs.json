@@ -37,7 +37,22 @@
               {
                 "group": "Part 1-1: General Rules",
                 "pages": [
-                  "ec2/part1-1/introduction"
+                  "ec2/part1-1/introduction",
+                  "ec2/part1-1/scope",
+                  "ec2/part1-1/normative-references",
+                  "ec2/part1-1/terms-definitions-symbols",
+                  "ec2/part1-1/basis-of-design",
+                  "ec2/part1-1/materials",
+                  "ec2/part1-1/durability-and-concrete-cover",
+                  "ec2/part1-1/structural-analysis",
+                  "ec2/part1-1/ultimate-limit-states",
+                  "ec2/part1-1/serviceability-limit-states",
+                  "ec2/part1-1/fatigue",
+                  "ec2/part1-1/detailing-of-reinforcement-and-post-tensioning-tendons",
+                  "ec2/part1-1/detailing-of-members-and-particular-rules",
+                  "ec2/part1-1/additional-rules-for-precast-concrete-elements-and-structures",
+                  "ec2/part1-1/plain-and-lightly-reinforced-concrete-structures"
+                  
                 ]
               }
             ]
