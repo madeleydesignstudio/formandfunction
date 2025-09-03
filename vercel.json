@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "buildCommand": "cd apps/web && bun run build",
+  "outputDirectory": "apps/web/.vercel/output",
+  "installCommand": "bun install",
+  "devCommand": "cd apps/web && bun run dev",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- apps/web/",
+  "framework": null
+}
