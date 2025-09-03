@@ -17,6 +17,15 @@ const config = defineConfig({
     }),
     viteReact(),
   ],
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://api.itsformfunction.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 });
 
 export default config;

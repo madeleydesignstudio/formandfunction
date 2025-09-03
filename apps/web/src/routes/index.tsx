@@ -1,9 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router'
-import logo from '../logo.svg'
+import { createFileRoute } from "@tanstack/react-router";
+import logo from "../logo.svg";
+import SteelBeams from "../components/SteelBeams";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   component: App,
-})
+});
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
           Learn TanStack
         </a>
       </header>
+      <div className="bg-[#282c34] pb-8">
+        <SteelBeams />
+      </div>
     </div>
-  )
+  );
 }
