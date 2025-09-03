@@ -3,3 +3,154 @@ title: 'Basis of Design'
 description: 'Description of your new file.'
 ---
 
+### 4.1 General rules
+
+### 4.1.1 Basic requirements
+
+(1) The basis of design for concrete structures shall be in accordance with the general rules given in EN 1990, supplemented by the provisions for basis of design for concrete structures given in this document.
+(2) The basic requirements of EN 1990:2023, Clause 4 should be deemed to be satisfied for concrete structures when the following are applied together:
+
+- limit state design in conjunction with the partial factor method in accordance with EN 1990;
+- actions in accordance with EN 1991 (all parts) and EN 1997 (all parts);
+- combination of actions in accordance with EN 1990; and
+- resistances, robustness, durability and serviceability in accordance with all relevant parts of EN 1992.
+
+
+### 4.1.2 Structural reliability and quality management
+
+(1) The rules for structural reliability and quality management given in EN 1990 shall be followed.
+
+### 4.1.3 Design service life
+
+(1) The design service life of structures or members of structures shall be specified.
+
+NOTE For values of design service life, see EN 1990:2023, Annex A.
+(2) Structures or members of structures shall be designed consistently with respect to all timedependent effects including durability, serviceability and fatigue.
+
+### 4.2 Basic variables
+
+### 4.2.1 Actions and time-dependent effects
+
+### 4.2.1.1 General
+
+(1) Actions to be used in design shall be obtained from the relevant parts of EN 1991 (all parts) or EN 1997 (all parts). Where relevant, other actions not covered by EN 1991 (all parts) or EN 1997 (all parts) shall be in accordance with EN 1990 and as specified by the relevant authority or agreed for a specific project by the relevant parties.
+
+NOTE Actions specific to this Eurocode (such as prestress, creep and shrinkage) are given in the relevant clauses.
+
+### 4.2.1.2 Time-dependent effects
+
+(1) Time dependent effects, including relaxation of the prestressing steel, shrinkage and creep of the concrete, should be accounted for in design, where relevant.
+(2) Where creep is taken into account its design effects should be evaluated under the quasipermanent combination of actions, and applied in all relevant combinations of actions.
+
+### 4.2.1.3 Effects resulting from restrained, imposed deformations
+
+(1) Effects resulting from restrained, imposed deformations should be quantified and considered when verifying serviceability limit states and fatigue.
+
+NOTE Effects resulting from restrained, imposed deformations can be reduced, when necessary, using various methods such as varying the composition of the concrete mix (guidance is given in D.3) and adjusting the stiffness of integral structural restraints. The use of bearings and joints can also reduce these effects.
+(2) The effects of restrained, imposed deformations may be neglected at ultimate limit states where it can be demonstrated or has been shown by experience with similar structures that:
+a) there is sufficient deformation capacity to allow the respective movements to occur and fulfil the ultimate limit state; and
+b) the structures behaviour is not sensitive to second order effects caused by large displacements.
+(3) In all other cases, the effects of restrained imposed deformations should be considered.
+
+NOTE For a detailed analysis, see Annex D.
+
+### 4.2.1.4 Ground-structure interaction
+
+(1) Where ground-structure interaction has significant influence on the action effects in the structure, the properties of the ground and the effects of the interaction shall be taken into account in accordance with EN 1997-1.
+(2) Where differential settlements/movements of the structure due to ground subsidence are taken into account, predicted values should be estimated in accordance with EN 1997-1 and limiting values for foundation movement set in accordance with EN 1990.
+
+### 4.2.1.5 Prestress
+
+(1) The design prestress action shall be determined.
+
+NOTE 1 The prestress considered in this Eurocode is applied by tendons made of high-strength steel (wires, strands or bars).
+
+NOTE 2 Tendons can be external to the structure with points of contact at possible deviators, at anchorages, or with continuous contact on curved surfaces.
+(2) When considered in accordance with 7.6.1(1) b), the design prestress action at ultimate limit states should be taken as the mean value of the prestressing stress (as calculated in 7.6.2, 7.6.3 and 7.6.4) multiplied by the partial factor for prestress.
+(3) For serviceability and fatigue verifications, allowance shall be made for possible variations in prestress. Upper and lower characteristic values of the prestressing stress at the serviceability limit state and in fatigue design shall be estimated from the mean value $\sigma_{\mathrm{pm}}(x, t)$ according to Formulae (4.1) and (4.2).
+
+$$
+\begin{align*}
+& \sigma_{\mathrm{pk}, \mathrm{sup}}(x, t)=r_{\mathrm{sup}} \cdot \sigma_{\mathrm{pm}}(x, t)  \tag{4.1}\\
+& \sigma_{\mathrm{pk}, \mathrm{inf}}(x, t)=r_{\mathrm{inf}} \cdot \sigma_{\mathrm{pm}}(x, t) \tag{4.2}
+\end{align*}
+$$
+
+NOTE The values of $r_{\text {sup }}$ and $r_{\text {inf }}$ given in Table 4.1 (NDP) apply unless the National Annex gives different values.
+
+Table 4.1 (NDP) — Factors for calculating the upper and lower characteristic values of the prestress action
+| Type of prestress | $r_{\text {sup }}$ | $r_{\text {inf }}$ |
+| :--- | :--- | :--- |
+| Pre-tensioning | 1,05 | 0,95 |
+| Post-tensioning with unbonded tendons | 1,05 | 0,95 |
+| Post-tensioning with bonded tendons | 1,10 | 0,90 |
+
+
+### 4.2.1.6 Effect of water or gas pressure
+
+(1) In structures exposed to high fluid or gas pressure the effect of potential pressure build up in pores and cracks shall be accounted for in the design where it increases the action effects or reduces the resistance by more than $10 \%$.
+
+### 4.2.2 Geometric data
+
+(1) Geometric tolerances shall comply with EN 13670, Tolerance Class 1, or where other tolerances are permitted they shall be specified in the execution specification and suitable allowances shall be made in the design.
+
+NOTE Examples of such members include cast-in-place bored piles where the steel casing is pulled, or concrete piles driven through rock. This standard offers no guidance on what allowance is adequate, but engineering practice in the various countries could. Allowance can be made either by a reduced cross-section, an assumed deformation or a reduced resistance.
+
+### 4.3 Verification by the partial factor method
+
+### 4.3.1 Partial factor for shrinkage action
+
+(1) Where consideration of shrinkage actions is required for ultimate limit state a partial factor, $\gamma_{\mathrm{SH}}$ : shall be used.
+
+NOTE The value $\gamma_{\mathrm{SH}}=1,0$ applies unless the National Annex gives a different value.
+
+### 4.3.2 Partial factors for prestress action
+
+(1) The partial factors $\gamma_{\mathrm{P}, \text { fav }}$ or $\gamma_{\mathrm{P}, \text { unfav }}$ shall be applied to the prestress for ultimate limit state verifications when considered in accordance with 7.6.1(1) b).
+
+NOTE The values of $\gamma_{\mathrm{P}, \text { fav }}$ or $\gamma_{\mathrm{P}, \text { unfav }}$ given in Table 4.2 (NDP) apply unless the National Annex gives different values.
+
+Table 4.2 (NDP) — Partial factors for prestress action for ultimate limit states
+| Factor for prestress | Value | Applied to | ULS verification type |
+| :--- | :--- | :--- | :--- |
+| $\gamma_{\text {P,fav }}$ | 1,00 | Prestress force for bonded and unbonded tendons | Verifications where an increase in prestress would be favourable |
+| $\gamma_{\text {P,unfav }}$ | 1,20 |  | Verifications where an increase in prestress would be unfavourable |
+| $\gamma_{\Delta \mathrm{P} \text {,sup }}$ | 0,80 | Change in stress in unbonded tendons | Verifications where increase in stress would be favourable |
+| $\gamma_{\Delta \mathrm{P}, \text { inf }}$ | 1,20 |  | Verifications where increase in stress would be unfavourable |
+| $\gamma_{\Delta \mathrm{P} \text {,sup }} \gamma_{\Delta \mathrm{P}, \mathrm{inf}}$ | 1,0 |  | Verifications where linear analysis with uncracked sections, i.e. assuming a lower limit of deformations, is applied |
+
+
+(2) Partial factors $\gamma_{\Delta \mathrm{P}, \text { sup }}$ or $\gamma_{\Delta \mathrm{P}, \text { inf }}$ shall be applied to the change in stress in unbonded prestressing tendons associated with the deformation of the member for ultimate limit state verifications (see 7.6.5(4)).
+
+NOTE The values of $\gamma_{\Delta \mathrm{P}, \text { sup }}$ and $\gamma_{\Delta \mathrm{P}, \text { inf }}$ given in Table 4.2 (NDP) apply unless the National Annex gives different values.
+
+### 4.3.3 Partial factors for materials
+
+(1) Partial factors for materials $\gamma_{\mathrm{S},} \gamma_{\mathrm{C}}, \gamma_{\mathrm{CE}}$ and $\gamma_{\mathrm{V}}$ shall be used.
+
+NOTE 1 The values of $\gamma_{\mathrm{S},} \gamma_{\mathrm{C}}, \gamma_{\mathrm{CE}}$ and $\gamma_{\mathrm{V}}$ in Table 4.3 (NDP) apply unless the National Annex gives different values.
+NOTE 2 For fire design the partial factors are obtained from prEN 1992-1-2. For seismic design the partial factors are obtained from EN 1998 (all parts).
+
+Table 4.3 (NDP) — Partial factors for materials
+| Design situations Limit states | $\gamma_{\mathrm{s}}$ for reinforcing and prestressing steel | $\gamma_{\mathrm{C}}$ and $\gamma_{\mathrm{CE}}$ for concrete | $\gamma_{\mathrm{v}}$ for shear and punching resistance without shear reinforcement |
+| :--- | :--- | :--- | :--- |
+| Persistent and transient design situation | 1,15 | 1,50 ${ }^{\text {a }}$ | 1,40 |
+| Fatigue design situation | 1,15 | 1,50 | 1,40 |
+| Accidental design situation | 1,00 | 1,15 | 1,15 |
+| Serviceability limit state | 1,00 | 1,00 | - |
+| NOTE The partial factors for materials correspond to geometrical deviations of Tolerance Class 1 and Execution Class 2 in EN 13670. |  |  |  |
+| a The value for $\gamma_{\mathrm{CE}}$ applies when the indicative value for the elastic modulus according 5.1.4(2) is used. A value $\gamma_{\mathrm{CE}}=1,3$ applies when the elastic modulus is determined according to 5.1.4(1). |  |  |  |
+
+
+(2) Lower values of partial factor $\gamma_{S}$ and $\gamma_{V}$ for the verification of the ULS in case of persistent, transient and accidental design situations may be used according to A. 3 if a design value of the effective depth $d_{\mathrm{d}}$ is considered.
+(3) Lower values of $\gamma_{\mathrm{S},} \gamma_{\mathrm{C}}, \gamma_{\mathrm{CE}}$ and $\gamma_{\mathrm{V}}$ may be used if justified by measures reducing the uncertainty in the calculated resistance, as specified in Annex A.
+(4) To allow for increased uncertainty and variability of concrete strength in cast-in-place concrete members, cast in the ground at significant depth without permanent casing, the partial factor $\gamma_{\mathrm{C}}$ should be multiplied by a factor $k_{\text {cip }}$.
+
+NOTE The value of $k_{\text {cip }}=1,1$ applies in general and the value $k_{\text {cip }}=1,0$ for cast-in-place concrete members built in accordance with EN 1536, EN 1538 or EN 14199 unless the National Annex gives different values.
+
+### 4.4 Requirements for connection of elements to concrete members
+
+(1) Reinforcement which is either cast-in or drilled-in and grouted into hardened concrete extending out of a member and/or connecting a member to an adjacent member, shall be properly anchored into the concrete member.
+(2) The design of fastenings used to connect structural elements or non-structural elements to concrete members and anchor / transmit the actions into the concrete (local effects) shall be done in accordance with EN 1992-4. The transmission of these actions from the fastenings within the concrete member to its supports (global effects) shall be done in accordance with this standard.
+
+NOTE For connections using post-installed reinforcing steel systems, see 11.4.8.
