@@ -35,16 +35,9 @@
             "group": "Eurocode 2 - Design of Concrete Structures",
             "pages": [
               {
-                "group": "Part 1-1: Specific weight of materials",
+                "group": "Part 1-1: General Rules",
                 "pages": [
-                  "ec1/part1-1/introduction",
-                  "ec1/part1-1/scope",
-                  "ec1/part1-1/normative-references",
-                  "ec1/part1-1/terms-definitions-and-symbols",
-                  "ec1/part1-1/specific-weight-of-construction-and-stored-materials",
-                  "ec1/part1-1/self-weight-of-construction-works",
-                  "ec1/part1-1/imposed-loads-on-buildings",
-                  "ec1/part1-1/annex-a"
+                  "ec2/part1-1/introduction",
                 ]
               }
             ]
@@ -53,16 +46,9 @@
             "group": "Eurocode 3 - Design of Steel Structures",
             "pages": [
              {
-                "group": "Part 1-1: Specific weight of materials",
+                "group": "Part 1-1: General Rules",
                 "pages": [
-                  "ec1/part1-1/introduction",
-                  "ec1/part1-1/scope",
-                  "ec1/part1-1/normative-references",
-                  "ec1/part1-1/terms-definitions-and-symbols",
-                  "ec1/part1-1/specific-weight-of-construction-and-stored-materials",
-                  "ec1/part1-1/self-weight-of-construction-works",
-                  "ec1/part1-1/imposed-loads-on-buildings",
-                  "ec1/part1-1/annex-a"
+                  "ec3/part1-1/introduction",
                 ]
               }
             ]
