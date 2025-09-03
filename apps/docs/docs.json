@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "almond",
   "name": "Eurocode Docs",
   "colors": {
     "primary": "#16A34A",
@@ -90,23 +90,6 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@eurocodedocs.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Calculator",
-      "href": "https://calculator.eurocodedocs.com"
-    }
+    "links": [],
   },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/eurocodedocs",
-      "github": "https://github.com/eurocodedocs",
-      "linkedin": "https://linkedin.com/company/eurocodedocs"
-    }
-  }
 }
