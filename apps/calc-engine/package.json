@@ -1,0 +1,42 @@
+{
+  "name": "@formfunction/calc-engine",
+  "version": "1.0.0",
+  "description": "Python-based structural calculation engine for steel beam analysis",
+  "scripts": {
+    "start": "./start.sh",
+    "dev": "python main.py",
+    "test": "python test_calc.py",
+    "install": "pip install -r requirements.txt",
+    "format": "black main.py test_calc.py api/main.py",
+    "lint": "flake8 main.py test_calc.py api/main.py",
+    "health": "curl -s http://localhost:8081/health | python -m json.tool",
+    "clean": "rm -rf venv __pycache__ *.pyc .pytest_cache .vercel",
+    "setup": "python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt",
+    "docs": "echo 'API docs available at: http://localhost:8081/docs'",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel",
+    "vercel:dev": "vercel dev",
+    "vercel:logs": "vercel logs",
+    "health:prod": "curl -s https://www.engine.itsformfunction.com/health | python -m json.tool",
+    "test:prod": "curl -X POST https://www.engine.itsformfunction.com/analyze -H 'Content-Type: application/json' -d '{\"applied_load\": 10.0, \"span_length\": 6.0, \"load_type\": \"uniform\", \"material_grade\": \"S355\"}'"
+  },
+  "keywords": [
+    "structural-engineering",
+    "steel-beams",
+    "calculations",
+    "eurocode3",
+    "fastapi",
+    "python"
+  ],
+  "engines": {
+    "python": ">=3.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formfunction/calc-engine.git"
+  },
+  "author": "Form & Function Engineering",
+  "license": "MIT",
+  "private": true,
+  "type": "commonjs"
+}

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "../logo.svg";
 import SteelBeams from "../components/SteelBeams";
+import BeamCalculator from "../components/BeamCalculator";
 
 export const Route = createFileRoute("/")({
   component: App,
@@ -37,6 +38,9 @@ function App() {
       </header>
       <div className="bg-[#282c34] pb-8">
         <SteelBeams />
+      </div>
+      <div className="bg-gray-100 py-12">
+        <BeamCalculator />
       </div>
     </div>
   );
