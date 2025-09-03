@@ -37,7 +37,7 @@
               {
                 "group": "Part 1-1: General Rules",
                 "pages": [
-                  "ec2/part1-1/introduction",
+                  "ec2/part1-1/introduction"
                 ]
               }
             ]
@@ -45,10 +45,10 @@
           {
             "group": "Eurocode 3 - Design of Steel Structures",
             "pages": [
-             {
+              {
                 "group": "Part 1-1: General Rules",
                 "pages": [
-                  "ec3/part1-1/introduction",
+                  "ec3/part1-1/introduction"
                 ]
               }
             ]
