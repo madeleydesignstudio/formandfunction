@@ -16,7 +16,6 @@
           {
             "group": "Eurocode 1 - Actions on Structures",
             "pages": [
-              "ec1/overview",
               {
                 "group": "Part 1-1: Specific weight of materials",
                 "pages": [
@@ -35,41 +34,37 @@
           {
             "group": "Eurocode 2 - Design of Concrete Structures",
             "pages": [
-              "ec2/overview",
-              "ec2/part1-1-general-rules",
-              "ec2/part1-2-fire-design",
-              "ec2/part1-3-precast-elements",
-              "ec2/part1-4-lightweight-concrete",
-              "ec2/part1-5-unbonded-tendons",
-              "ec2/part2-concrete-bridges",
-              "ec2/part3-liquid-retaining",
-              "ec2/part4-fastenings"
+              {
+                "group": "Part 1-1: Specific weight of materials",
+                "pages": [
+                  "ec1/part1-1/introduction",
+                  "ec1/part1-1/scope",
+                  "ec1/part1-1/normative-references",
+                  "ec1/part1-1/terms-definitions-and-symbols",
+                  "ec1/part1-1/specific-weight-of-construction-and-stored-materials",
+                  "ec1/part1-1/self-weight-of-construction-works",
+                  "ec1/part1-1/imposed-loads-on-buildings",
+                  "ec1/part1-1/annex-a"
+                ]
+              }
             ]
           },
           {
             "group": "Eurocode 3 - Design of Steel Structures",
             "pages": [
-              "ec3/overview",
-              "ec3/part1-1-general-rules",
-              "ec3/part1-2-fire-design",
-              "ec3/part1-3-cold-formed",
-              "ec3/part1-4-stainless-steel",
-              "ec3/part1-5-plated-elements",
-              "ec3/part1-6-shell-structures",
-              "ec3/part1-7-planar-plates",
-              "ec3/part1-8-joints",
-              "ec3/part1-9-fatigue",
-              "ec3/part1-10-fracture-toughness",
-              "ec3/part1-11-tension-members",
-              "ec3/part1-12-high-strength-steel",
-              "ec3/part1-13-web-openings",
-              "ec3/part2-steel-bridges",
-              "ec3/part3-1-towers-masts",
-              "ec3/part3-2-chimneys",
-              "ec3/part4-1-silos",
-              "ec3/part4-2-tanks",
-              "ec3/part4-3-pipelines",
-              "ec3/part5-piling"
+             {
+                "group": "Part 1-1: Specific weight of materials",
+                "pages": [
+                  "ec1/part1-1/introduction",
+                  "ec1/part1-1/scope",
+                  "ec1/part1-1/normative-references",
+                  "ec1/part1-1/terms-definitions-and-symbols",
+                  "ec1/part1-1/specific-weight-of-construction-and-stored-materials",
+                  "ec1/part1-1/self-weight-of-construction-works",
+                  "ec1/part1-1/imposed-loads-on-buildings",
+                  "ec1/part1-1/annex-a"
+                ]
+              }
             ]
           }
         ]
