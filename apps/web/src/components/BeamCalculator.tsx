@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useMutation, useQuery } from "@tanstack/react-query";
 import { Button } from "@ordo/ui/components/button";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { z } from "zod";
 
 // Zod schemas for type safety
@@ -127,7 +127,7 @@ export default function BeamCalculator() {
     retry: 2, // Limit retries
     retryDelay: 1000, // 1 second delay between retries
     staleTime: 5 * 60 * 1000, // 5 minutes
-    cacheTime: 10 * 60 * 1000, // 10 minutes
+    gcTime: 10 * 60 * 1000, // 10 minutes
   });
 
   // Mutation for beam analysis
