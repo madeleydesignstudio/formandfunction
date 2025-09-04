@@ -34,8 +34,12 @@ const steelBeamSchema = z.object({
   area_of_section: z.number(),
 });
 
-// Zod schema for the array of beams in the API response
-const steelBeamsResponseSchema = z.array(steelBeamSchema);
+// Zod schema for the API response that contains beams array
+const steelBeamsResponseSchema = z.object({
+  beams: z.array(steelBeamSchema),
+  count: z.number(),
+  source: z.string(),
+});
 
 // Type alias inferred from the Zod schema
 type SteelBeam = z.infer<typeof steelBeamSchema>;
@@ -44,7 +48,7 @@ type SteelBeam = z.infer<typeof steelBeamSchema>;
 const fetchBeams = async () => {
   const apiUrl =
     process.env.NODE_ENV === "development"
-      ? "/api/beams"
+      ? "http://localhost:8080/beams"
       : "https://api.itsformfunction.com/beams";
   const response = await fetch(apiUrl);
 
@@ -54,7 +58,9 @@ const fetchBeams = async () => {
 
   const data = await response.json();
   // Validate data with Zod, which throws an error if validation fails
-  return steelBeamsResponseSchema.parse(data);
+  const validatedData = steelBeamsResponseSchema.parse(data);
+  // Return just the beams array for the component
+  return validatedData.beams;
 };
 
 export default function SteelBeams() {
