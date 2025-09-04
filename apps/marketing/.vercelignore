@@ -1,11 +1,18 @@
+# Ignore other apps in the monorepo
+../web/
+../docs/
+../../packages/*/node_modules/
+
 # Build artifacts
 .next/
 out/
 build/
 dist/
+.vercel/
 
-# Node modules
+# Dependencies
 node_modules/
+../../node_modules/
 
 # Environment files
 .env*
@@ -13,6 +20,7 @@ node_modules/
 
 # Cache directories
 .turbo/
+../../.turbo/
 .cache/
 
 # Debug logs
@@ -21,6 +29,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+bun.lockb
 
 # OS generated files
 .DS_Store

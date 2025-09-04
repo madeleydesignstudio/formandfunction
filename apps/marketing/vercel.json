@@ -1,11 +1,12 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "buildCommand": "cd ../.. && bun run build --filter=@formfunction/marketing",
+  "buildCommand": "./build-deploy.sh",
   "outputDirectory": ".next",
   "installCommand": "cd ../.. && bun install",
-  "devCommand": "cd ../.. && bun run dev --filter=@formfunction/marketing",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./",
+  "devCommand": "cd ../.. && turbo dev --filter=@formfunction/marketing",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- apps/marketing/",
+  "crons": [],
   "functions": {},
   "routes": [
     {
@@ -32,6 +33,10 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
       ]
     }
